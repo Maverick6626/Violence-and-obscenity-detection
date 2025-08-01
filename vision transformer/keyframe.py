@@ -1,5 +1,4 @@
 import av
-from model_utils import predict
 
 def extract_keyframes(video_path):
     container = av.open(video_path)
@@ -15,16 +14,3 @@ def extract_keyframes(video_path):
     container.close()
 
     return frames if frames else None
-
-if __name__ == '__main__':
-    import time
-    video_path = 'test.mov'
-
-    start_time = time.time()
-    results = predict(extract_keyframes, video_path)
-    end_time = time.time()
-
-    print(f'Results: {results}')
-    print(f'Time taken: {end_time - start_time:.2f} seconds')
-
-# Todo: Dataset info, iframe explanation, dataset private and all as obscene is bad, github links   
